@@ -16,7 +16,7 @@ This class helps to convert multimedia files to desired types, it is tested for 
 *OnProgress* is the alternate to this pointer, it is simple to use it(see the example), otherwise *lambda* function is needed to call class member function.
 
 * **double duration:** File length(second)
-* **double currenttime:** total time of file which is converted currently
+* **double currenttime:** total time of file which is converted(second)
 * **double getProgressPercentage():** get progress percent with accuracy in 0.1%
 
 **Example code:**
