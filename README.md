@@ -8,11 +8,11 @@ This class helps to convert multimedia files to desire type, it is tested for au
 * the callback function is defined according to the rkDelegate in order to simplify using single callback event.
 
 **class members :** class rkAudioConverter
-**rkAudioConverter( wxString FFMPegPath):** Class constractor, *FFMPegPath* is relative path to *ffmpeg.exe*, you need to download this file and put it in a folder in startuppath directory and pass the path to constractor.
-**onStatusChangedT onStatusChanged:** Conversion status changed during converting the file, the event can be used to show progress or to check if the process is finished or faced to an error. it doesn't need to use this function pointer directly, the delegate helps to simplify using complicate class member function pointer!
-**double duration:** File length(second)
-**double currenttime:** total time of file which is converted curently
-**double getProgressPercentage():** get progress percent with accuracy in 0.1%
+* **rkAudioConverter( wxString FFMPegPath):** Class constractor, *FFMPegPath* is relative path to *ffmpeg.exe*, you need to download this file and put it in a folder in startuppath directory and pass the path to constractor.
+* **onStatusChangedT onStatusChanged:** Conversion status changed during converting the file, the event can be used to show progress or to check if the process is finished or faced to an error. it doesn't need to use this function pointer directly, the delegate helps to simplify using complicate class member function pointer!
+* **double duration:** File length(second)
+* **double currenttime:** total time of file which is converted curently
+* **double getProgressPercentage():** get progress percent with accuracy in 0.1%
 
 **Example code:**
 ````
