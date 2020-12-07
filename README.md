@@ -31,7 +31,7 @@ public:
     // On Receive info event function
     void OnOutputLineReceived(rkAudioConverter* ac,wxString &s)
     {
-      *txt1 <<s<<" "<< ac->getProgressPercentage()<< " % \r\n";
+      *myTextControl <<s<<" "<< ac->getProgressPercentage()<< " % \r\n";
     }
 
     myClass()
@@ -41,7 +41,7 @@ public:
     // Assigning member function to the converter instance
       Converter->OnProgress(this->OnOutputLineReceived);
     }  
-    void OnClick(wxCommandEvent& event)
+    void myButtonOnClick(wxCommandEvent& event)
     {
     // Starting conversion by passing relative input and output file paths
       Converter->Convert("\\resources\\converter\\k1505_.wav", "\\resources\\converter\\k1505_.mp3");
