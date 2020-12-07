@@ -1,11 +1,13 @@
-# wxFFMPeg-Converter
+# wxWidgets wxFFMPeg-Converter
 wxWidgete C++ ffmpeg audio converter
 
-This class helps to convert multimedia files to desired types, it is tested for audio files but the procedure is the same for other types.
+This class helps to convert multimedia files to desired types, it is tested for audio files by wxWidgets but the procedure is the same for other types and platforms. 
 
 **Basics :**
 * the class uses rkApplication to find current directory, so all paths are relative based on the startup directory.
 * the callback function is defined according to the rkDelegate in order to simplify using single callback event.
+
+**How to install :** In order to use this class, you could add the header and cpp files to your wxWidgets project.
 
 **class members :** class rkAudioConverter
 * **rkAudioConverter( wxString FFMPegPath):** Class constructor, *FFMPegPath* is relative path to *ffmpeg.exe*, you need to download this file and put it in a folder in startuppath directory and pass the path to constructor.
@@ -86,5 +88,7 @@ Current time: 02:17:52.58 Duration: 02:17:52.56 100.00 %
 Finished 100.00 % 
 ````
 
-rkDelegate and lambda function :
-rkApplication :
+* rkDelegate and lambda function :
+* rkApplication :
+
+#XCOMHZ / rkLib
