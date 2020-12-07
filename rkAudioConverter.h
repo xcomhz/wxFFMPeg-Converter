@@ -38,12 +38,8 @@ public:
 		Busy = true;
 		return true;
 	}
-	//T* Target;
-	//void (T::* OnConverted)(rkAudioConverter* e) = 0;
-	//void (T::* OnOutputLineReceived)(rkAudioConverter* e,wxString &s) = 0;
-	rkAudioConverter(/*T* Target,*/ wxString FFMPegPath)
+	rkAudioConverter( wxString FFMPegPath)
 	{
-		//this->Target = Target;
      	this->FFMPegPath = rkApplication::StartupPath + FFMPegPath;
 
 		timer = new wxTimer();
@@ -54,14 +50,12 @@ public:
 	~rkAudioConverter() {
 		if (p)
 		{
-		//	p->Unbind(wxEVT_END_PROCESS, &OnFinished, this);
+			p->Unbind(wxEVT_END_PROCESS, &rkAudioConverter::OnFinished, this);
 			delete p;
 		}
 	}
 	void OnFinished(wxProcessEvent& event)
 	{
-//		if (OnConverted != 0)
-			//Target->OnConverted(this);
 		Busy = false;
 	}
 	double duration = 0;
@@ -87,8 +81,6 @@ private:
 		if (p && !TimerIsBusy)
 		{
 			TimerIsBusy = true;
-			bool a = p->IsErrorAvailable();
-			bool b = p->IsInputAvailable();
 			wxInputStream* is = p->GetErrorStream();
 			while (is->CanRead())
 			{
@@ -187,8 +179,6 @@ private:
 					
 						if (onStatusChanged != 0 && outStr != "")
 							onStatusChanged(this, outStr);
-				//	if (OnOutputLineReceived != 0 && outStr != "")
-					//	Target->OnOutputLineReceived(this, outStr);
 					outStr = "";
 				}
 				else 
